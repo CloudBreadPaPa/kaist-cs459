@@ -80,7 +80,7 @@ Build your own real-world IoT solution to receive data from device to IoT cloud 
 - Process realtime IoT data in Stream Analytics
 - Store JSON data in Azure blob storage
 
-#### common hands-on
+#### common hands-on, deploy Azure services for IoT
 1. Log on to Azure Portal - https://portal.azure.com/  
 2. Click new - type "resource group" - create - type name and change location to "Japan West"  
 3. Click new - internet of things - IoT hub click - type name - change Resource group to just created - click create button  
@@ -88,7 +88,7 @@ Build your own real-world IoT solution to receive data from device to IoT cloud 
 5. Click new - sStorage - Storage account - type name - change Replication to "Locally-redundant storage(LRS)" and change Resource group to just created - click create button  
 6. click IoT Hub - "Shared access policy" - iothubowner - copy "connection string primary key". This is used in your app as connectionstring value.  
 
-==You can choice your prefer language between **node.js and C#==  
+==You can choice your prefer language between node.js and C# to simulate IoT device==  
 
 #### node.js hands-on coding
 ```
@@ -121,6 +121,7 @@ node SimulatedDevice.js
 
 #### C# hands-on coding
 ```
+// Fork and clone https://github.com/CloudBreadPaPa/kaist-cs459 repository.
 // open kaist-cs459\cs\cs459-iot folder, cs459-iot.sln Visual Studio solution file
 // CreateDeviceIdentity project - Program.cs file
 // Change below code to your connection string
@@ -143,7 +144,7 @@ deviceClient = DeviceClient.Create(iotHubUri, new DeviceAuthenticationWithRegist
 ```
 execute project to simulate IoT device.
 
-#### common hands-on set "Stream Analytics Job"
+#### common hands-on, set "Stream Analytics Job"
 Go to Azure Portal - Reource Group - click your scream analytics - inputs - add - type name "input" and select "IoT Hub".   
 Azure automatically populate IoT hub information and set it as input - click save   
 Click outputs - add - type name "output" - Change Sink to "Blob storage" - select Storage account just created - click "create" button   
