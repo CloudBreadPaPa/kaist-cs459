@@ -49,12 +49,17 @@ https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-linux-
 Node-RED is a tool for wiring together hardware devices, APIs and online services in new and interesting ways.  
 http://nodered.org/  
 
+Node-red is based on node.js -> install node.js first.
+https://nodejs.org/ko/download/
+
+Install node-red by following command:
+sudo npm install -g --unsafe-perm node-red
 ```
 // install ssh script for Node-RED  
 // 백경덕 조교님  
 ```
 
-By default, all VM inbound port is blocked, except SSH(port 22). To open another VM inbound port(ex. HTTP 80 port), process in Azure Portal "Network Security Group".  
+By default, all VM inbound port is blocked, except SSH(port 22). To open another VM inbound port(ex. HTTP 80 port, Node-red 1880 port), process in Azure Portal "Network Security Group".  
 Opening ports to a VM in Azure using the Azure Portal  
 https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-windows-nsg-quickstart-portal/  
 Opening ports to a VM in Azure using the Azure Classic Portal  
