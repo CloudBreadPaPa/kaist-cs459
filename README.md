@@ -80,7 +80,77 @@ Build your own real-world IoT solution to receive data from device to IoT cloud 
 - Process realtime IoT data in Stream Analytics
 - Store JSON data in Azure blob storage
 
+#### common hands-on
+1. Log on to Azure Portal - https://portal.azure.com/  
+2. Click new - type "resource group" - create - type name and change location to "Japan West"  
+3. Click new - internet of things - IoT hub click - type name - change Resource group to just created - click create button  
+4. Click new - internet of things - Stream analytics Job - type job name and change Resource group to just created - click create button  
+5. Click new - sStorage - Storage account - type name - change Replication to "Locally-redundant storage(LRS)" and change Resource group to just created - click create button  
+6. click IoT Hub - "Shared access policy" - iothubowner - copy "connection string primary key". This is used in your app as connectionstring value.  
+
+==You can choice your prefer language between **node.js and C#==  
+
+#### node.js hands-on coding
 ```
+// Fork and clone https://github.com/CloudBreadPaPa/kaist-cs459 repository.
+// Open kaist-cs459\node\createdeviceidentity folder CreateDeviceIdentity.js file
+// Change below connection string code value as yours
+...
+var connectionString = 'HostName=something.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=somgthing';
+...
+device.deviceId = 'kaist-device-00';
+...
+```
+
+```
+//Execute CreateDeviceIdentity.js app to generate device key
+node CreateDeviceIdentity.js
+```
+
+```
+// Open kaist-cs459\node\simulateddevice folder SimulatedDevice.js file
+// Change below code
+...
+var connectionString = 'HostName=something.azure-devices.net;DeviceId=kaist-device-00;SharedAccessKey=generated-device-key';
+...
+```
+```
+//Execute SimulatedDevice.js app send IoT message to IoT Hub
+node SimulatedDevice.js
+```
+
+#### C# hands-on coding
+```
+// open kaist-cs459\cs\cs459-iot folder, cs459-iot.sln Visual Studio solution file
+// CreateDeviceIdentity project - Program.cs file
+// Change below code to your connection string
+...
+static string connectionString = "HostName=something.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=something";
+...
+string deviceId = "dw-kaist-device00";
+...
+```
+Execute project and generate device Key
+```
+// open SimulatedDevice project - Program.cs file
+// change below code
+...
+static string iotHubUri = "something.azure-devices.net";
+static string deviceKey = "generated-device-key";
+...
+deviceClient = DeviceClient.Create(iotHubUri, new DeviceAuthenticationWithRegistrySymmetricKey("dw-kaist-device00", deviceKey));
+...
+```
+execute project to simulate IoT device.
+
+#### common hands-on set "Stream Analytics Job"
+Go to Azure Portal - Reource Group - click your scream analytics - inputs - add - type name "input" and select "IoT Hub".   
+Azure automatically populate IoT hub information and set it as input - click save   
+Click outputs - add - type name "output" - Change Sink to "Blob storage" - select Storage account just created - click "create" button   
+In Stream Analytics - overview - click Start button on the top - start it now   
+Check output blob file.
+
+#### Reference
 Get started with Azure IoT Hub for Node.js  
 https://azure.microsoft.com/en-us/documentation/articles/iot-hub-node-node-getstarted/  
 
@@ -92,7 +162,7 @@ https://azure.microsoft.com/en-us/documentation/articles/stream-analytics-get-st
 
 Stream Analytics outputs: Options for storage, analysis
 https://azure.microsoft.com/en-us/documentation/articles/stream-analytics-define-outputs/#blob-storage
-```
+
 
 ## Technical community
 Microsoft Forum category with "Microsoft Azure Platform"  
