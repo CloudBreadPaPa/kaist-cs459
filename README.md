@@ -3,6 +3,8 @@ This repo is Kaist kaist CS492B class training doc - 20161011
 Short URL : https://aka.ms/cs459
 
 ## Cloud and Microsoft Azure
+Microsoft Azure is a cloud computing platform and infrastructure, created by Microsoft, for building, deploying and managing applications and services through a global network of Microsoft-managed and Microsoft partner hosted datacenters.
+
 Overview presentation of Cloud and Microsoft Azure  
 Microsoft Azure : https://azure.microsoft.com
 
@@ -66,12 +68,25 @@ https://azure.microsoft.com/en-us/documentation/services/iot-hub/
 Azure and Internet of Things  
 https://azure.microsoft.com/en-us/documentation/articles/iot-hub-what-is-azure-iot/  
 
+### IoT Mission  
+Build your own real-world IoT solution to receive data from device to IoT cloud data storage in 60 min.
+- Simulated IoT device  
+- Send JSON data to Azure IoT hub  
+- Process realtime IoT data in Stream Analytics
+- Store JSON data in Azure blob storage
+
 ```
 Get started with Azure IoT Hub for Node.js  
 https://azure.microsoft.com/en-us/documentation/articles/iot-hub-node-node-getstarted/  
 
 Get started with Azure IoT Hub for .NET  
 https://azure.microsoft.com/en-us/documentation/articles/iot-hub-csharp-csharp-getstarted/  
+
+Get started with Azure Stream Analytics to process data from IoT devices
+https://azure.microsoft.com/en-us/documentation/articles/stream-analytics-get-started-with-azure-stream-analytics-to-process-data-from-iot-devices/
+
+Stream Analytics outputs: Options for storage, analysis
+https://azure.microsoft.com/en-us/documentation/articles/stream-analytics-define-outputs/#blob-storage
 ```
 
 ## Technical community
