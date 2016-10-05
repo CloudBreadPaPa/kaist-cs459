@@ -50,7 +50,7 @@ Node-RED is a tool for wiring together hardware devices, APIs and online service
 http://nodered.org/  
 
 Node-red is based on node.js -> install node.js first.
-https://nodejs.org/ko/download/
+https://nodejs.org/en/download/
 
 Install node-red by following command:
 sudo npm install -g --unsafe-perm node-red
