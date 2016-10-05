@@ -1,5 +1,5 @@
 # kaist-cs459
-This repo is Kaist kaist CS492B class training doc - 20161011
+This repo is Kaist kaist CS459 class training doc - 20161011
 Short URL : https://aka.ms/cs459
 
 ## Cloud and Microsoft Azure
