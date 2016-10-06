@@ -55,8 +55,13 @@ https://nodejs.org/en/download/
 Install node-red by following command:
 sudo npm install -g --unsafe-perm node-red
 ```
-// install ssh script for Node-RED  
-// 백경덕 조교님  
+sudo apt-get update  
+sudo apt-get install nodejs  
+sudo apt-get install npm  
+```
+```
+// install node-red
+sudo npm install -g --unsafe-perm node-red  
 ```
 
 By default, all VM inbound port is blocked, except SSH(port 22). To open another VM inbound port(ex. HTTP 80 port, Node-red 1880 port), process in Azure Portal "Network Security Group".  
