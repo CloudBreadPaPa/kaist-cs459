@@ -55,6 +55,7 @@ https://nodejs.org/en/download/
 Install node-red by following command:
 sudo npm install -g --unsafe-perm node-red
 ```
+// Ubuntu distro. - with Aptitude package manager one can install the package nodejs and npm  
 sudo apt-get update  
 sudo apt-get install nodejs  
 sudo apt-get install npm  
